@@ -1,0 +1,85 @@
+@use 'shared/_colors' as c;
+@use 'shared/_utils' as u;
+
+.weather-display .main.xkcd {
+	&.main {
+		// width: 100%; // Ensures that the comic uses the full width available
+		// margin: 20px auto; // Adds some spacing around the comic
+		// text-align: center; // Centers the comic and text
+
+		.col {
+			height: 50px;
+			width: 255px;
+			display: inline-block;
+			margin-top: 10px;
+			position: absolute;
+
+			@include u.text-shadow();
+
+			&.left {
+				font-family: 'Star4000 Extended';
+				font-size: 24pt;
+
+			}
+
+			&.right {
+				right: 0px;
+				font-family: 'Star4000 Large';
+				font-size: 16pt;
+				font-weight: bold;
+
+				.row {
+					margin-bottom: 12px;
+
+					.label,
+					.value {
+						display: inline-block;
+					}
+
+					.label {
+						margin-left: 20px;
+					}
+
+					.value {
+						float: right;
+						margin-right: 10px;
+					}
+
+				}
+
+			}
+		}
+
+		@include u.text-shadow();
+
+		.comic-image {
+			max-width: 100%; // Ensures the comic does not exceed the container width
+			height: calc(100% - 10px); // Keeps the comic proportionate
+			display: block; // Makes the image a block element
+			margin: 0 auto; // Centers the image horizontally
+			padding: 5px 0;
+			width: auto;
+		}
+
+		// .center {
+		// 	text-align: center;
+		// }
+
+		// .comic-title,
+		// .comic-alt {
+		// 	font-family: 'Star4000 Large';
+		// 	color: c.$title-color;
+		// 	font-size: 18pt;
+		// 	margin-top: 10px; // Adds space between the comic image and the title
+		// }
+		.comic-container {
+			height: 100%;
+
+			.full {
+				width: 100%;
+				// margin: 20px auto;
+				height: 100%;
+			}
+		}
+	}
+}

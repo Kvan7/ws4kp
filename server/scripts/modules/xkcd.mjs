@@ -6,6 +6,7 @@ import { registerDisplay } from './navigation.mjs';
 class Xkcd extends WeatherDisplay {
 	constructor(navId, elemId) {
 		super(navId, elemId, 'Xkcd', true);
+		this.timing.baseDelay = 15_000;
 	}
 
 	async getData(_weatherParameters) {
@@ -38,16 +39,14 @@ class Xkcd extends WeatherDisplay {
 		}
 
 		// Get the container element where the comic will be displayed
-		const displayElement = this.elem.querySelector('.content');
-		if (!displayElement) {
-			console.error('.content element not found');
+		const comicContainer = this.elem.querySelector('.comic-container');
+		if (!comicContainer) {
+			console.error('.comic-container element not found');
 			return;
 		}
 
-		// Set the inner HTML of the container to include the comic image, title, and alt text as a caption
-		displayElement.innerHTML = `<img src="${this.comicData.img}" alt="${this.comicData.alt}" title="${this.comicData.title}" style="max-width:100%; height:auto;">
-                                    <p>${this.comicData.alt}</p>`; // Adding alt text as a caption for accessibility and additional context
-
+		comicContainer.querySelector('.comic-image').src = this.comicData.img;
+		comicContainer.querySelector('.comic-title').textContent = this.comicData.title;
 		// Call finishDraw if there's any cleanup or final steps needed
 		this.finishDraw();
 	}
