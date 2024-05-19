@@ -32,7 +32,8 @@
 			"T'storm",
 			"uscomp",
 			"Visib",
-			"Waukegan"
+			"Waukegan",
+			"xkcd"
 		],
 		"cSpell.ignorePaths": [
 			"**/package-lock.json",
@@ -54,9 +55,8 @@
 		"files.exclude": {},
 		"files.eol": "\n",
 		"editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
+		"editor.codeActionsOnSave": {
 			"source.fixAll.eslint": "explicit"
 		}
-
 	},
 }
