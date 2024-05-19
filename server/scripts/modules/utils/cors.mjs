@@ -3,6 +3,7 @@ const rewriteUrl = (_url) => {
 	let url = _url;
 	url = url.replace('https://api.weather.gov/', `${window.location.protocol}//${window.location.host}/`);
 	url = url.replace('https://www.cpc.ncep.noaa.gov/', `${window.location.protocol}//${window.location.host}/`);
+	url = url.replace('https://xkcd.com/', `${window.location.protocol}//${window.location.host}/xkcd-proxy/`);
 	return url;
 };
 
